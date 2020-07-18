@@ -1,0 +1,122 @@
+<html>
+
+<head>
+
+<title>Registration Form</title>
+
+<script>
+
+function validateForm(){
+
+var x = document.forms["myForm"]["fname"].value;
+
+var y = document.forms["myForm"]["lname"].value;
+
+var z = document.forms["myForm"]["emailId"].value;
+
+var p = document.forms["myForm"]["password"].value;
+
+var m = document.forms["myForm"]["mobile"].value;
+
+if(x == "" || y == "" || z == "" || p == "" || m == ""){
+
+   alert("All fields are required");
+
+   return false;
+
+}
+
+if(p.length < 6){
+
+   alert("Password should be atleast 6 characters");
+
+   return false;
+
+}
+if(x.length < 6){
+  alert("Name should contain atleast 6 characters");
+  return false;
+}
+for(var i = 0;i < x.length; i++){
+
+if(x[i] <  'a' ||  x[i] > 'z' ){
+
+if(x[i] <'A' || x[i] >'Z'){
+
+alert("Name should contain only alphabets");
+
+return false;
+
+}
+
+}
+}
+if(m.length < 10){
+   alert("Mobile number should contain atleast 10 digits");
+   return false;
+}
+for(var i = 0;i < m.length; i++){
+if(m[i] <'0' || m[i] > '9'){
+alert("Enter a valid mobile number");
+return false;
+}
+}
+}
+
+</script>
+
+</head>
+
+<body>
+
+<center>
+
+<h1>Registration Form</h1>
+
+<img src="logo.png" height="100px" width="100px">
+
+<form id="myForm" onsubmit="return validateForm()">
+
+FirstName: <input type="text"  name ="fname"  placeholder="firstName"></br></br>
+
+LastName: <input type="text"  name ="lname"  placeholder="lastName"></br></br>
+
+email Id: <input type="email"  name ="emailId"  placeholder="emailId"></br></br>
+
+Password: <input type="password"  name ="password"  placeholder="******"></br></br>
+
+MobileNo: <input type="text" name ="mobile" placeholder="MobileNo"></br></br> 
+Branch:<select name="branch">
+
+<option value="CSE">CSE</option>
+
+<option value="ECE">ECE</option>
+
+<option value="EEE">EEE</option>
+
+<option value="IT">IT</option>
+
+</select>
+
+Year:<select name="year">
+
+<option value="1">1</option>
+
+<option value="2">2</option>
+
+<option value="2">2</option>
+
+<option value="2">2</option>
+
+</select><br><br>
+
+<input type="submit" value="Submit">
+
+<input type="reset" value="Reset">
+
+</form>
+
+</center>
+</body>
+
+</html>
